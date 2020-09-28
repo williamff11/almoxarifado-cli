@@ -49,7 +49,7 @@
 						<th>#</th>
 						<th>Descrição</th>
 						<th>Marca</th>
-						<th>hardware?</th>
+						<th>Hardware?</th>
 						<th></th>
 						<th></th>
 					</tr>

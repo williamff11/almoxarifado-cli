@@ -7,6 +7,20 @@ public class Produto {
 	private Integer id;
 	private String descricao;
 	private List<Solicitacao> solicitacoes;
+	private String tipoProduto;
+
+	@Override
+	public String toString() {
+		return String.format("%s", this.getDescricao());
+	}
+	
+	public String getTipoProduto() {
+		return tipoProduto;
+	}
+
+	public void setTipoProduto(String tipoProduto) {
+		this.tipoProduto = tipoProduto;
+	}
 	
 	public Produto() {
 		super();

@@ -5,6 +5,10 @@ public class Informatica extends Produto {
 	private String marca;
 	private boolean hardware;
 	
+	public Informatica() {
+		this.setTipoProduto("INF");
+	}
+	
 	@Override
 	public String toString() {
 		return "Informatica [marca=" + marca + ", hardware=" + hardware + "]";

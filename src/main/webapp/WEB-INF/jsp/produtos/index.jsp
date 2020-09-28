@@ -22,6 +22,7 @@
 	crossorigin="anonymous" />
 </head>
 <body>
+
 	<div class="container">
 		<div class="container-fluid" style="margin-top: 80px">
 			<c:import url="/WEB-INF/jsp/header.jsp" />
@@ -29,55 +30,43 @@
 
 		<div class="dropdown">
 			<button type="button" class="btn btn-primary dropdown-toggle"
-				data-toggle="dropdown">Produtos de Manutencao</button>
+				data-toggle="dropdown">Produtos</button>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="/manutencao">Novo</a>
+				<a class="dropdown-item" href="/lista-informatica">Informatica</a> <a
+					class="dropdown-item" href="lista-manutencao">Manutenção</a> <a
+					class="dropdown-item" href="lista-papelaria">Papelaria</a>
 			</div>
 		</div>
 		<br>
 
 		<c:if test="${not empty msgError}">
 			<div class="alert alert-danger">
-				<div class="alert alert-danger" role="alert">${msgError}</div>
+				<strong>Erro!!</strong> ${msgError}
 			</div>
 		</c:if>
 
-		<c:if test="${not empty listaManutencao}">
+		<c:if test="${not empty produtos}">
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Descrição</th>
-						<th>Utilidade</th>
-						<th>Toxico?</th>
-						<th></th>
+						<th>DESCRIÇÃO</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="man" items="${listaManutencao}">
+					<c:forEach var="p" items="${produtos}">
 						<tr>
-							<td>${man.id}</td>
-							<td>${man.descricao}</td>
-							<td>${man.utilidade}</td>
-							<c:choose>
-								<c:when test="${man.toxico}">
-									<td>SIM</td>
-								</c:when>
-								<c:otherwise>
-									<td>NÃO</td>
-								</c:otherwise>
-							</c:choose>
-							<td><a href="/manutencao/${man.id}/excluir"><i
+							<td>${p.id}</td>
+							<td>${p}</td>
+							<td><a href="/produto/${p.id}/excluir"><i
 									class="fas fa-trash"></i></a></td>
-							<td><a href="/manutencao/${man.id}/alterar"><i
-									class="fas fa-edit"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</c:if>
-		<c:if test="${empty listaManutencao}">
+		<c:if test="${empty produtos}">
 			<div class="alert alert-warning">
 				<strong>Sem registros cadastrados!!</strong>
 			</div>

@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>WebAlmoxarifado</title>
+<title>AppGrana</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -18,7 +17,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div class="container">
 
 		<div class="container-fluid" style="margin-top: 80px">
@@ -27,33 +25,23 @@
 
 		<h3>${operacao}</h3>
 
-		<form action="/manutencao" method="post">
-			<input type="hidden" name="id" value="${manutencao.id}">
-				
+		<form action="/setor" method="post">
+			<input type="hidden" name="id" value="${setor.id}">
+
+			<div class="form-group">
+				<label for="usr">Nome:</label> <input type="text"
+					class="form-control" name="nome" value="${setor.nome}">
+			</div>
 
 			<div class="form-group">
 				<label for="usr">Descrição:</label> <input type="text"
-					class="form-control" name="descricao"
-					value="${manutencao.descricao}" required>
+					class="form-control" name="descricao" value="${setor.descricao}">
 			</div>
 
-			<div class="form-group">
-				<label for="usr">Utilidade:</label> <input type="text"
-					class="form-control" name="utilidade" value="${manutencao.marca}"
-					required>
-			</div>
-
-			<div class="form-group">
-				<label for="usr">Toxico?</label> 
-				<br>
-				<input type="radio" id="sim" name="toxico" value=true>
-				<label for="sim">Sim</label>
-				<input type="radio" id="nao" name="toxico" value=false>
-				<label for="nao">Não</label>
-			</div>
-
-			<button type="submit" class="btn btn-primary">Salvar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
+
 	</div>
+
 </body>
 </html>

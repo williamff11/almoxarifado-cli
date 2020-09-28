@@ -5,6 +5,10 @@ public class Manutencao extends Produto {
 	private String utilidade;
 	private boolean toxico;
 	
+	public Manutencao() {
+		this.setTipoProduto("MAN");
+	}
+	
 	@Override
 	public String toString() {
 		return "Manutencao [utilidade=" + utilidade + ", toxico=" + toxico + "]";

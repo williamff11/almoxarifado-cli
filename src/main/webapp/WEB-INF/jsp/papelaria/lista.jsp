@@ -48,8 +48,8 @@
 					<tr>
 						<th>#</th>
 						<th>Descrição</th>
-						<th>utilidade</th>
-						<th>toxico?</th>
+						<th>Cor</th>
+						<th>Reutilizavel?</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -68,9 +68,9 @@
 									<td>NÃO</td>
 								</c:otherwise>
 							</c:choose>
-							<td><a href="/informatica/${pap.id}/excluir"><i
+							<td><a href="/papelaria/${pap.id}/excluir"><i
 									class="fas fa-trash"></i></a></td>
-							<td><a href="/informatica/${pap.id}/alterar"><i
+							<td><a href="/papelaria/${pap.id}/alterar"><i
 									class="fas fa-edit"></i></a></td>
 						</tr>
 					</c:forEach>

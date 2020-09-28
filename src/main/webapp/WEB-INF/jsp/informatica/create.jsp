@@ -29,7 +29,7 @@
 
 		<form action="/informatica" method="post">
 			<input type="hidden" name="id" value="${informatica.id}">
-			 <input type="hidden" name="tipoProduto" value="INF">
+			 
 
 			<div class="form-group">
 				<label for="usr">Descrição:</label> <input type="text"

@@ -5,6 +5,10 @@ public class Papelaria extends Produto {
 	private String cor;
 	private boolean reutilizavel;
 	
+	public Papelaria() {
+		this.setTipoProduto("PAP");
+	}
+	
 	@Override
 	public String toString() {
 		return "Papelaria [cor=" + cor + ", reutilizavel=" + reutilizavel + "]";

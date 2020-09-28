@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>WebAlmoxarifado</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="ISO-8859-1">
+<title>Lista</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script
@@ -23,15 +21,16 @@
 </head>
 <body>
 	<div class="container">
+
 		<div class="container-fluid" style="margin-top: 80px">
 			<c:import url="/WEB-INF/jsp/header.jsp" />
 		</div>
 
 		<div class="dropdown">
 			<button type="button" class="btn btn-primary dropdown-toggle"
-				data-toggle="dropdown">Produtos de Manutencao</button>
+				data-toggle="dropdown">Usuários</button>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="/manutencao">Novo</a>
+				<a class="dropdown-item" href="/usuario">Novo</a>
 			</div>
 		</div>
 		<br>
@@ -42,42 +41,44 @@
 			</div>
 		</c:if>
 
-		<c:if test="${not empty listaManutencao}">
+		<c:if test="${not empty usuarios}">
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Descrição</th>
-						<th>Utilidade</th>
-						<th>Toxico?</th>
+						<th>Nome</th>
+						<th>Usuário</th>
+						<th>Gestor</th>
+						<th>Setor</th>
 						<th></th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="man" items="${listaManutencao}">
+					<c:forEach var="user" items="${usuarios}">
 						<tr>
-							<td>${man.id}</td>
-							<td>${man.descricao}</td>
-							<td>${man.utilidade}</td>
+							<td>${user.id}</td>
+							<td>${user.nome}</td>
+							<td>${user.login}</td>
 							<c:choose>
-								<c:when test="${man.toxico}">
+								<c:when test="${user.gestor}">
 									<td>SIM</td>
 								</c:when>
 								<c:otherwise>
 									<td>NÃO</td>
 								</c:otherwise>
 							</c:choose>
-							<td><a href="/manutencao/${man.id}/excluir"><i
+							<td>${user.setor.nome}</td>
+							<td><a href="/usuario/${user.id}/excluir"><i
 									class="fas fa-trash"></i></a></td>
-							<td><a href="/manutencao/${man.id}/alterar"><i
+							<td><a href="/usuario/${user.id}/alterar"><i
 									class="fas fa-edit"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</c:if>
-		<c:if test="${empty listaManutencao}">
+		<c:if test="${empty usuarios}">
 			<div class="alert alert-warning">
 				<strong>Sem registros cadastrados!!</strong>
 			</div>

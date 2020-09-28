@@ -27,10 +27,9 @@
 
 		<h3>${operacao}</h3>
 
-		<form action="/informatica" method="post">
-			<input type="hidden" name="id" value="${papelaria.id}"> <input
-				type="hidden" name="tipoProduto" value="PAP">
-
+		<form action="/papelaria" method="post">
+			<input type="hidden" name="id" value="${papelaria.id}"> 
+			
 			<div class="form-group">
 				<label for="usr">Descrição:</label> <input type="text"
 					class="form-control" name="descricao"
