@@ -18,7 +18,7 @@ public class ProdutoController {
 	public String lista(Model model) {
 		model.addAttribute("produtos", produtoService.obterProdutos());
 
-		return "produto/lista";
+		return "produtos/index";
 	}
 
 	@GetMapping(value = "/produto/{id}/excluir")

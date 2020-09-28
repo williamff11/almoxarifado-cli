@@ -27,14 +27,14 @@ public class PapelariaController {
 	public String lista(Model model) {
 		model.addAttribute("listaPapelaria", papelariaService.obterLista());
 
-		return "manutencao/lista";
+		return "papelaria/lista";
 	}
 
 	@PostMapping(value = "/papelaria")
 	public String incluir(Papelaria papelaria) {
 		papelariaService.incluir(papelaria);
 
-		return "redirect:/lista-manutencao";
+		return "redirect:/lista-papelaria";
 	}
 
 	@GetMapping(value = "/papelaria/{id}/excluir")
