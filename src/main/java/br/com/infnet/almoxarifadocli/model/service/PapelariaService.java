@@ -9,7 +9,7 @@ import br.com.infnet.almoxarifadocli.clients.IPapelariaClient;
 import br.com.infnet.almoxarifadocli.model.negocio.Papelaria;
 
 @Service
-public class PapelariaService {
+public class PapelariaService extends ProdutoService {
 
 	@Autowired
 	private IPapelariaClient client;

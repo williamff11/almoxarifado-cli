@@ -28,27 +28,27 @@
 		<h3>${operacao}</h3>
 
 		<form action="/informatica" method="post">
-			<input type="hidden" name="id" value="${informatica.id}">
-			 <input type="hidden" name="tipoProduto" value="INF">
+			<input type="hidden" name="id" value="${papelaria.id}"> <input
+				type="hidden" name="tipoProduto" value="PAP">
 
 			<div class="form-group">
 				<label for="usr">Descrição:</label> <input type="text"
 					class="form-control" name="descricao"
-					value="${informatica.descricao}" required>
+					value="${papelaria.descricao}" required>
 			</div>
 
 			<div class="form-group">
-				<label for="usr">Marca:</label> <input type="text"
-					class="form-control" name="marca" value="${informatica.marca}"
+				<label for="usr">cor:</label> <input type="text"
+					class="form-control" name="cor" value="${papelaria.cor}"
 					required>
 			</div>
 
 			<div class="form-group">
-				<label for="usr">Hardware?</label> 
+				<label for="usr">Reutilizavel?</label> 
 				<br>
-				<input type="radio" id="sim" name="hardware" value=true>
+				<input type="radio" id="sim" name="reutilizavel" value=true>
 				<label for="sim">Sim</label>
-				<input type="radio" id="nao" name="hardware" value=false>
+				<input type="radio" id="nao" name="reutilizavel" value=false>
 				<label for="nao">Não</label>
 			</div>
 

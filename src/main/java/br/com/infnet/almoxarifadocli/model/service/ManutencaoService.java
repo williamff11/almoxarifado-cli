@@ -9,7 +9,7 @@ import br.com.infnet.almoxarifadocli.clients.IManutencaoClient;
 import br.com.infnet.almoxarifadocli.model.negocio.Manutencao;
 
 @Service
-public class ManutencaoService {
+public class ManutencaoService extends ProdutoService {
 
 	@Autowired
 	private IManutencaoClient client;

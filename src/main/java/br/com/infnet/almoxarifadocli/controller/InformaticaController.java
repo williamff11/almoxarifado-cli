@@ -14,25 +14,25 @@ import br.com.infnet.almoxarifadocli.model.service.InformaticaService;
 public class InformaticaController {
 
 	@Autowired
-	private InformaticaService InformaticaService;
+	private InformaticaService informaticaService;
 
 	@GetMapping(value = "/informatica")
 	public String novo(Model model) {
-		model.addAttribute("operacao", "inclusão");
+		model.addAttribute("operacao", "Inclusão");
 
 		return "informatica/create";
 	}
 
 	@GetMapping(value = "/lista-informatica")
 	public String lista(Model model) {
-		model.addAttribute("listaInformatica", InformaticaService.obterLista());
+		model.addAttribute("listaInformatica", informaticaService.obterLista());
 
 		return "informatica/lista";
 	}
 
 	@PostMapping(value = "/informatica")
 	public String incluir(Informatica informatica) {
-		InformaticaService.incluir(informatica);
+		informaticaService.incluir(informatica);
 
 		return "redirect:/lista-informatica";
 	}
@@ -41,7 +41,7 @@ public class InformaticaController {
 	public String excluir(Model model, @PathVariable Integer id) {
 
 		try {
-			InformaticaService.excluir(id);
+			informaticaService.excluir(id);
 		} catch (Exception e) {
 			model.addAttribute("msgError", "Impossível realizar a exclusão: este item está sendo utilizado!!");
 			return this.lista(model);
@@ -53,7 +53,7 @@ public class InformaticaController {
 	@GetMapping(value = "/informatica/{id}/alterar")
 	public String alterar(Model model, @PathVariable Integer id) {
 
-		model.addAttribute("informatica", InformaticaService.obterPorId(id));
+		model.addAttribute("informatica", informaticaService.obterPorId(id));
 		model.addAttribute("operacao", "Edição");
 
 		return "informatica/create";

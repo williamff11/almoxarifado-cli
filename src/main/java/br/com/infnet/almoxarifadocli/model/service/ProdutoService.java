@@ -12,7 +12,6 @@ import br.com.infnet.almoxarifadocli.model.negocio.Produto;
 @Service
 public class ProdutoService {
 
-
 	@Autowired private IProdutoClient produtoClient;
 	
 	public void incluir(Produto produto) {
