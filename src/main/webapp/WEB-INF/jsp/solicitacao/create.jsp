@@ -23,36 +23,43 @@
 			<c:import url="/WEB-INF/jsp/header.jsp" />
 		</div>
 
-		<h3>${operacao}</h3>
+		<h3>Nova Solicitação</h3>
 
-		<form action="/usuario" method="post">
-			<input type="hidden" name="id" value="${usuario.id}">
+		<form action="/solicitacao" method="post">
+			<input type="hidden" name="usuario" value="${user.id}">
 
-			<div class="form-group">
-				<label for="usr">Nome:</label> <input type="text"
-					class="form-control" name="nome" value="${usuario.nome}">
-			</div>
 
-			<div class="form-group">
-				<label for="usr">Login:</label> <input type="text"
-					class="form-control" name="login" value="${usuario.login}">
-			</div>
-
-			<c:if test="${operacao == 'Inclusão'}">
+			<c:if test="${operacao == 'consulta'}">
 				<div class="form-group">
-					<label for="usr">Senha:</label> <input type="password"
-						class="form-control" name="senha">
+					<label for="usr">Solicitante:</label> <input type="text"
+						class="form-control" name="solicitante"
+						value="${solicitacao.usuario.nome}">
 				</div>
 			</c:if>
+
 			<div class="form-group">
-				<label for="usr">Setor</label> <select name="setor.id"
-					class="form-control">
-					<c:forEach var="setor" items="${listaSetor}">
-						<option value="${setor.id}">${setor.id}-${setor.nome}</option>
-					</c:forEach>
-				</select>
+				<label for="usr">Data Devolução</label> <input type="date" name="data"
+					value="${solicitacao.data}">
 			</div>
 
+			<c:if test="${operacao != 'consulta'}">
+				<div class="form-group">
+					<label for="usr">Produtos:</label>
+					<c:if test="${not empty produtos}">
+						<div class="form-check">
+							<label class="form-check-label"> <c:forEach var="p"
+									items="${produtos}">
+									<input type="checkbox" class="form-check-input" name="produtos"
+										value="${p.id}"> ${p.descricao}<br>
+								</c:forEach>
+							</label>
+						</div>
+					</c:if>
+				</div>
+				<c:if test="${empty produtos}">
+					<label for="usr">Nenhum produto cadastrado!</label>
+				</c:if>
+			</c:if>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 

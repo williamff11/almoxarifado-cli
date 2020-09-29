@@ -6,15 +6,13 @@ import java.util.List;
 public class Solicitacao {
 
 	private Integer id;
-	private Integer quantidade;
 	private LocalDate data;
 	private List<Produto> produtos;
-
 	private Usuario usuario;
 
 	@Override
 	public String toString() {
-		return "Solicitacao [id=" + id + ", quantidade=" + quantidade + ", data=" + data + ", produtos=" + produtos
+		return "Solicitacao [id=" + id + ", quantidade=" + ", produtos=" + produtos
 				+ ", usuario=" + usuario + "]";
 	}
 
@@ -28,14 +26,6 @@ public class Solicitacao {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getQuantidade() {
-		return quantidade;
-	}
-
-	public void setQuantidade(Integer quantidade) {
-		this.quantidade = quantidade;
 	}
 
 	public LocalDate getData() {

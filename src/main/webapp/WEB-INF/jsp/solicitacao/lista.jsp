@@ -28,9 +28,9 @@
 
 		<div class="dropdown">
 			<button type="button" class="btn btn-primary dropdown-toggle"
-				data-toggle="dropdown">Usuários</button>
+				data-toggle="dropdown">Solicitações</button>
 			<div class="dropdown-menu">
-				<a class="dropdown-item" href="/usuario">Novo</a>
+				<a class="dropdown-item" href="/solicitacao">Novo</a>
 			</div>
 		</div>
 		<br>
@@ -41,44 +41,34 @@
 			</div>
 		</c:if>
 
-		<c:if test="${not empty usuarios}">
+		<c:if test="${not empty solicitacoes}">
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Nome</th>
-						<th>Usuário</th>
-						<th>Gestor</th>
+						<th>Solicitante</th>
 						<th>Setor</th>
-						<th></th>
+						<th>Produtos</th>
+						<th>Data</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="user" items="${usuarios}">
+					<c:forEach var="solicitacao" items="${solicitacoes}">
 						<tr>
-							<td>${user.id}</td>
-							<td>${user.nome}</td>
-							<td>${user.login}</td>
-							<c:choose>
-								<c:when test="${user.gestor}">
-									<td>SIM</td>
-								</c:when>
-								<c:otherwise>
-									<td>NÃO</td>
-								</c:otherwise>
-							</c:choose>
-							<td>${user.setor.nome}</td>
-							<td><a href="/usuario/${user.id}/excluir"><i
-									class="fas fa-trash"></i></a></td>
-							<td><a href="/usuario/${user.id}/alterar"><i
-									class="fas fa-edit"></i></a></td>
+							<td>${solicitacao.id}</td>
+							<td>${solicitacao.usuario.nome}</td>
+							<td>${solicitacao.usuario.setor.nome}</td>
+							<td>${solicitacao.produtos.size()}</td>
+							<td>${solicitacao.data}</td>
+							<td><a href="/solicitacao/${solicitacao.id}"><i
+									class="fab fa-readme"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</c:if>
-		<c:if test="${empty usuarios}">
+		<c:if test="${empty solicitacoes}">
 			<div class="alert alert-warning">
 				<strong>Sem registros cadastrados!!</strong>
 			</div>

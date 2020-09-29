@@ -25,8 +25,4 @@ public class SolicitacaoService {
 	public Solicitacao obterPorId(Integer id) {
 		return client.obterPorId(id);
 	}
-
-	public void excluir(Integer id) {
-		client.excluir(id);
-	}
 }

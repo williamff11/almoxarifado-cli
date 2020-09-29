@@ -35,14 +35,14 @@ public class SetorController {
 	}
 
 	@RequestMapping(value = "/setor", method = RequestMethod.POST)
-	public String incluir(Model model, Setor setor) {
+	public String incluir(Setor setor) {
 		setorService.incluir(setor);
 
 		return "redirect:/setores";
 	}
 
 	@RequestMapping(value = "/setor/{id}/excluir", method = RequestMethod.GET)
-	public String excluir(Model model, @PathVariable Integer id) {
+	public String excluir(@PathVariable Integer id) {
 		setorService.excluir(id);
 
 		return "redirect:/setores";

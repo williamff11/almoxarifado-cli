@@ -11,5 +11,4 @@ public class AlmoxarifadoCliApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AlmoxarifadoCliApplication.class, args);
 	}
-
 }

@@ -18,42 +18,28 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 	<div class="container">
 
 		<div class="container-fluid" style="margin-top: 80px">
 			<c:import url="/WEB-INF/jsp/header.jsp" />
 		</div>
 
-		<h3>${operacao}</h3>
-
-		<form action="/manutencao" method="post">
-			<input type="hidden" name="id" value="${manutencao.id}">
-				
-
-			<div class="form-group">
-				<label for="usr">Descrição:</label> <input type="text"
-					class="form-control" name="descricao"
-					value="${manutencao.descricao}" required>
+		<div class="card" style="width: 600px">
+			<img class="card-img-top"
+				src="https://www.infnet.edu.br/infnet/wp-content/uploads/sites/6/2018/01/logotipo.png"
+				alt="Instituto Infnet">
+			<div class="card-body">
+				<h4 class="card-title">William Felicio Freire</h4>
+				<p class="card-text">Engenharia de Software</p>
+				<p class="card-text">TP3 :: Desenvolvimento Web com Java EE</p>
+				<a target="_blank"
+					href="https://github.com/williamff11/TP-springboot"
+					class="btn btn-secondary">GIT</a>
 			</div>
+		</div>
 
-			<div class="form-group">
-				<label for="usr">Utilidade:</label> <input type="text"
-					class="form-control" name="utilidade" value="${manutencao.utilidade}"
-					required>
-			</div>
-
-			<div class="form-group">
-				<label for="usr">Toxico?</label> 
-				<br>
-				<input type="radio" id="sim" name="toxico" value=true>
-				<label for="sim">Sim</label>
-				<input type="radio" id="nao" name="toxico" value=false>
-				<label for="nao">Não</label>
-			</div>
-
-			<button type="submit" class="btn btn-primary">Salvar</button>
-		</form>
 	</div>
+
+
 </body>
 </html>
